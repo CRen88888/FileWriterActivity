@@ -34,7 +34,8 @@ public class MyFileWriter {
         }
 
         // 4. Using BufferedOutputStream
-        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(fileName4))) {
+        try (BufferedOutputStream bufferedOutputStream =
+                new BufferedOutputStream(new FileOutputStream(fileName4))) {
             bufferedOutputStream.write(data.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,7 +49,19 @@ public class MyFileWriter {
         }
     }
 
-      
+    private static void printFileSize(String fileName) {
+        File file = new File(fileName);
+        if (file.isFile() && file.exists()) {
+            System.out.println("File size is: " + file.length());
+        } else {
+            System.out.println("File is invalid");
+        }
+
+    }
+
+    
+
+
 
 }
 
