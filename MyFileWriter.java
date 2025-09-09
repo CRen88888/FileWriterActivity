@@ -48,38 +48,7 @@ public class MyFileWriter {
         }
     }
 
-        public static void createHiddenFile(){
-        try{
-            String data = "password";
-            String myObj = new String(".hiddenFile.txt");
-            Files.write(Paths.get(myObj), data.getBytes(StandardCharsets.UTF_8));
-        } catch(IOException e){
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+      
 
-    
-    }
-
-    public static void regularFile(){
-        String regularFile = "file.txt";
-        String directory = ".secretfolder";
-        String data = "passwordisunique";
-        try{
-            Files.write(Paths.get(regularFile), data.getBytes(StandardCharsets.UTF_8));
-        } catch(IOException e){
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        String source = "/FileWriterActivity";
-        String target = "/Users/cooperren/Desktop/HTCS_Projects/FileWriterActivity/";
-        Path sourceLoc = Paths.get(source);
-        Path targetLoc = Paths.get(target);
-        try{
-            files.move
-        }
-
-
-    }
 }
 
