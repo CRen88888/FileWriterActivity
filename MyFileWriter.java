@@ -59,7 +59,25 @@ public class MyFileWriter {
 
     }
 
-    
+    public String toString(File file) {
+        return file.toString();
+    }
+
+    /**
+     * Reads a text file and returns its contents as a string.
+     * 
+     * @param filePath the path to the file
+     * @return the contents of the file as a string
+     * @throws IOException if an I/O error occurs
+     */
+    public static String stringify(String filePath) throws IOException {
+
+        return null;
+    }
+
+    private static void printFileSize(String... fileNames) {
+        System.out.println("Total size of all files: ...TBD... bytes");
+    }
 
 
 
