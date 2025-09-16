@@ -72,10 +72,6 @@ public class MyFileWriter {
         printFileSize("file1.txt", ".hiddenfile.txt", ".secretfolder/passwordfile.txt");
     }
 
-    public String toString(File file) {
-        return file.toString();
-    }
-
     /**
      * Reads a text file and returns its contents as a string.
      * 
@@ -85,8 +81,11 @@ public class MyFileWriter {
      */
     public static String stringify(String filePath) throws IOException {
 
-        return null;
+        String string = Files.readString(Paths.get(filePath));
+        return string;
     }
+
+
 
 }
 
