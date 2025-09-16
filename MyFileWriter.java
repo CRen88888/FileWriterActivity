@@ -47,16 +47,29 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        testPrintFileSize();
     }
 
-    private static void printFileSize(String fileName) {
-        File file = new File(fileName);
-        if (file.isFile() && file.exists()) {
-            System.out.println("File size is: " + file.length());
-        } else {
-            System.out.println("File is invalid");
+    private static void printFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
         }
-
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+    
+    private static void testPrintFileSize() {
+        File file1 = new File("file1.txt");
+        try {
+            Files.write(Paths.get("file1.txt"), "fortnitebattlepass".getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        printFileSize("file1.txt", ".hiddenfile.txt", ".secretfolder/passwordfile.txt");
     }
 
     public String toString(File file) {
@@ -74,12 +87,6 @@ public class MyFileWriter {
 
         return null;
     }
-
-    private static void printFileSize(String... fileNames) {
-        System.out.println("Total size of all files: ...TBD... bytes");
-    }
-
-
 
 }
 
