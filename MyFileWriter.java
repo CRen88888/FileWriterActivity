@@ -59,7 +59,6 @@ public class MyFileWriter {
 
     }
 
-
     /**
      * Reads a text file and returns its contents as a string.
      * 
