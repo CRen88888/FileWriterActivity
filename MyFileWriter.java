@@ -59,10 +59,6 @@ public class MyFileWriter {
 
     }
 
-    public String toString(File file) {
-        return file.toString();
-    }
-
     /**
      * Reads a text file and returns its contents as a string.
      * 
@@ -71,12 +67,8 @@ public class MyFileWriter {
      * @throws IOException if an I/O error occurs
      */
     public static String stringify(String filePath) throws IOException {
-
-        return null;
-    }
-
-    private static void printFileSize(String... fileNames) {
-        System.out.println("Total size of all files: ...TBD... bytes");
+        String string = Files.readString(Paths.get(filePath));
+        return string;
     }
 
 
