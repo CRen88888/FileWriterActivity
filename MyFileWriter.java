@@ -67,7 +67,7 @@ public class MyFileWriter {
      * @throws IOException if an I/O error occurs
      */
     public static String stringify(String filePath) throws IOException {
-        String string = Files.readString(Paths.get(filePath))
+        String string = Files.readString(Paths.get(filePath));
         return string;
     }
 
