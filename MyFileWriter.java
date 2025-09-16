@@ -59,10 +59,13 @@ public class MyFileWriter {
 
     }
 
+<<<<<<< HEAD
     public String toString(File file) {
         return file.toString();
     }
 
+=======
+>>>>>>> f36c7b3 ((MFW-0.3.4): Added stringify Method)
     /**
      * Reads a text file and returns its contents as a string.
      * 
@@ -71,12 +74,17 @@ public class MyFileWriter {
      * @throws IOException if an I/O error occurs
      */
     public static String stringify(String filePath) throws IOException {
+<<<<<<< HEAD
 
         return null;
     }
 
     private static void printFileSize(String... fileNames) {
         System.out.println("Total size of all files: ...TBD... bytes");
+=======
+        String string = Files.readString(Paths.get(filePath))
+        return string;
+>>>>>>> f36c7b3 ((MFW-0.3.4): Added stringify Method)
     }
 
 
