@@ -46,22 +46,44 @@ public class MyFileWriter {
         //     e.printStackTrace();
         // }
 
+<<<<<<< HEAD
         // // 5. Using Files (java.nio.file)
         // try {
         //     Files.write(Paths.get(fileName5), data.getBytes(StandardCharsets.UTF_8));
         // } catch (IOException e) {
         //     e.printStackTrace();
         // }
-    }
-
-    private static void printFileSize(String fileName) {
-        File file = new File(fileName);
-        if (file.isFile() && file.exists()) {
-            System.out.println("File size is: " + file.length());
-        } else {
-            System.out.println("File is invalid");
+=======
+        // 5. Using Files (java.nio.file)
+        try {
+            Files.write(Paths.get(fileName5), data.getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        testPrintFileSize();
+>>>>>>> origin/main
+    }
+
+    private static void printFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+    
+    private static void testPrintFileSize() {
+        File file1 = new File("file1.txt");
+        try {
+            Files.write(Paths.get("file1.txt"), "fortnitebattlepass".getBytes(StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        printFileSize("file1.txt", ".hiddenfile.txt", ".secretfolder/passwordfile.txt");
     }
 
     /**
@@ -72,6 +94,10 @@ public class MyFileWriter {
      * @throws IOException if an I/O error occurs
      */
     public static String stringify(String filePath) throws IOException {
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
         String string = Files.readString(Paths.get(filePath));
         return string;
     }
